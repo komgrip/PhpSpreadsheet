@@ -1,5 +1,5 @@
 {
-    "name": "phpoffice/phpspreadsheet",
+    "name": "komgrip/phpspreadsheet",
     "description": "PHPSpreadsheet - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
     "keywords": [
         "PHP",
@@ -14,27 +14,13 @@
     "config": {
         "sort-packages": true
     },
-    "homepage": "https://github.com/PHPOffice/PhpSpreadsheet",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Maarten Balliauw",
-            "homepage": "https://blog.maartenballiauw.be"
-        },
-        {
-            "name": "Mark Baker",
-            "homepage": "https://markbakeruk.net"
-        },
-        {
-            "name": "Franck Lefevre",
-            "homepage": "https://rootslabs.net"
-        },
-        {
-            "name": "Erik Tilt"
-        },
-        {
-            "name": "Adrien Crivelli"
+            "name": "phanuwit hongsin",
+            "email": "phanuwit.h@komgrip.com",
+            "role": "lead"
         }
     ],
     "scripts": {
