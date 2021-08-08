@@ -192,6 +192,32 @@ class Axis extends Properties
     }
 
     /**
+     * Set Axis Visibility to TRUE
+     */
+    public function showAxis()
+    {
+        $this->axisOptions['hide'] = 0;
+    }
+
+    /**
+     * Set Axis Visibility to FALSE
+     */
+    public function hideAxis()
+    {
+        $this->axisOptions['hide'] = 1;
+    }
+
+    /**
+     * Get Axis Visibility.
+     *
+     * @return int
+     */
+    public function getAxisVisibilty()
+    {
+        return $this->axisOptions['hide'];
+    }
+
+    /**
      * Get Axis Options Property.
      *
      * @param string $property

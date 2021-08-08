@@ -401,7 +401,7 @@ class Chart extends WriterPart
         $objWriter->endElement();
 
         $objWriter->startElement('c:delete');
-        $objWriter->writeAttribute('val', 0);
+        $objWriter->writeAttribute('val', $yAxis->getAxisVisibilty());
         $objWriter->endElement();
 
         $objWriter->startElement('c:axPos');
@@ -533,7 +533,7 @@ class Chart extends WriterPart
         $objWriter->endElement();
 
         $objWriter->startElement('c:delete');
-        $objWriter->writeAttribute('val', 0);
+        $objWriter->writeAttribute('val', $xAxis->getAxisVisibilty());
         $objWriter->endElement();
 
         $objWriter->startElement('c:axPos');
