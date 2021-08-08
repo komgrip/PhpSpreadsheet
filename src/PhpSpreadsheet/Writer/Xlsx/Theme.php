@@ -135,9 +135,15 @@ class Theme extends WriterPart
         $objWriter->startElement('a:dk1');
 
         // a:sysClr
+        if (isset($_SESSION['windowTextColor'])) {
+            $windowTextColor = $_SESSION['windowTextColor'];
+            unset($_SESSION['windowTextColor']);
+        } else {
+            $windowTextColor = '000000';
+        }
         $objWriter->startElement('a:sysClr');
         $objWriter->writeAttribute('val', 'windowText');
-        $objWriter->writeAttribute('lastClr', '000000');
+        $objWriter->writeAttribute('lastClr', $windowTextColor);
         $objWriter->endElement();
 
         $objWriter->endElement();
@@ -146,9 +152,26 @@ class Theme extends WriterPart
         $objWriter->startElement('a:lt1');
 
         // a:sysClr
+        $windowColorTransparent = false;
+        if (isset($_SESSION['windowColor'])) {
+            $windowColor = $_SESSION['windowColor'];
+            if ($windowColor == 'transparent') {
+                $windowColorTransparent = true;
+                $windowColor = 'FFFFFF';
+            }
+            unset($_SESSION['windowColor']);
+        } else {
+            $windowColor = 'FFFFFF';
+        }
         $objWriter->startElement('a:sysClr');
         $objWriter->writeAttribute('val', 'window');
-        $objWriter->writeAttribute('lastClr', 'FFFFFF');
+        $objWriter->writeAttribute('lastClr', $windowColor);
+         // alpha value in range [0 - 100000]\
+         if ($windowColorTransparent) {
+            $objWriter->startElement('a:alpha');
+            $objWriter->writeAttribute('val', '0');
+            $objWriter->endElement();
+        }
         $objWriter->endElement();
 
         $objWriter->endElement();

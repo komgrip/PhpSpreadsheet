@@ -5,6 +5,8 @@ namespace PhpOffice\PhpSpreadsheet\Chart;
 use PhpOffice\PhpSpreadsheet\Settings;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
+session_start();
+
 class Chart
 {
     /**
@@ -659,5 +661,21 @@ class Chart
         $renderer = new $libraryName($this);
 
         return $renderer->render($outputDestination);
+    }
+
+    /**
+     * Set $value to 000000, FFFFFF
+     */
+    public function setWindowTextColor($value)
+    {
+        $_SESSION['windowTextColor'] = $value;
+    }
+
+    /**
+     * Set $value to 000000, FFFFFF, transparent
+     */
+    public function setWindowColor($value)
+    {
+        $_SESSION['windowColor'] = $value;
     }
 }
